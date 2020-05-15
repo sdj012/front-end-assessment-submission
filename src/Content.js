@@ -13,7 +13,6 @@ class Content extends React.Component {
       Students:[],
       filter_name:"",
       filter_tag:"",
-      accordionVisibility:0,
     }
 
 
@@ -26,6 +25,7 @@ class Content extends React.Component {
     this.studentData=this.studentData.bind(this);
 
     this.displayMore=this.displayMore.bind(this);
+    this.whileFilteredDisplayMore=this.whileFilteredDisplayMore.bind(this);
     this.filterValidObjects=this.filterValidObjects.bind(this);
     this.componentDidMount=this.componentDidMount.bind(this);
   
@@ -35,6 +35,26 @@ class Content extends React.Component {
 
     let el=document.getElementById("hidden_" + event.target.id)
     let vert=document.getElementsByClassName("accordion_button_vert")[event.target.id-1]
+
+    if(!el.style.display){
+      el.style.display='block'
+      vert.style.display='none'
+    }
+
+    else {
+      el.style.display=''
+      vert.style.display='table'
+    }
+
+
+  }
+
+  whileFilteredDisplayMore(event){
+
+    console.log(event.target.id)
+
+    let el=document.getElementById("hidden_" + event.target.id)
+    let vert=document.getElementsByClassName("accordion_button_vert")[event.target.id]
 
     if(!el.style.display){
       el.style.display='block'
@@ -235,7 +255,7 @@ class Content extends React.Component {
 
         <div className="student_list">
 
-        {this.filterValidObjects().map(student => 
+        {this.filterValidObjects().map((student,index) => 
           
           <div className="Student">
 
@@ -254,7 +274,7 @@ class Content extends React.Component {
               <p>Average: {student.average}%</p>
               <br></br>
 
-                <div id={"hidden_" + student.id}>
+                <div id={"hidden_" + index}>
 
                   <p className="tests">{student.grades.map( (test,index) => <p>Test {index+1} : {test}%</p> )}</p>
                   
@@ -271,7 +291,7 @@ class Content extends React.Component {
 
             </div>
     
-            <div className="accordion_button" id={student.id} onClick={this.displayMore}><div className="accordion_button_vert" id={student.id}></div></div>
+            <div className="accordion_button" id={index} onClick={this.whileFilteredDisplayMore}><div className="accordion_button_vert" id={index}></div></div>
 
         </div>
 
