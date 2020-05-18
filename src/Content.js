@@ -34,7 +34,7 @@ class Content extends React.Component {
   displayMore(event){
 
     let el=document.getElementById("hidden_" + event.target.id)
-    let vert=document.getElementsByClassName("accordion_button_vert")[event.target.id-1]
+    let vert=document.getElementsByClassName("expand-btn_vert")[event.target.id-1]
 
     if(!el.style.display){
       el.style.display='block'
@@ -54,7 +54,7 @@ class Content extends React.Component {
     console.log(event.target.id)
 
     let el=document.getElementById("hidden_" + event.target.id)
-    let vert=document.getElementsByClassName("accordion_button_vert")[event.target.id]
+    let vert=document.getElementsByClassName("expand-btn_vert")[event.target.id]
 
     if(!el.style.display){
       el.style.display='block'
@@ -247,9 +247,9 @@ class Content extends React.Component {
           
           <div className="filters">
 
-            <input type="text" placeholder="Search by name" value={this.state.filter_name} onChange={this.handleNameFilter}/>
+            <input type="text" placeholder="Search by name" id="name-input" value={this.state.filter_name} onChange={this.handleNameFilter}/>
                   
-            <input type="text" placeholder="Search by tags" value={this.state.filter_tag} onChange={this.handleTagFilter}/>
+            <input type="text" placeholder="Search by tags" id="tag-input" value={this.state.filter_tag} onChange={this.handleTagFilter}/>
           
           </div>
 
@@ -284,14 +284,14 @@ class Content extends React.Component {
                   )}
           
                   <form>
-                    <input type="text" id={student.id} placeholder="Add a Tag" onKeyDown={this.onKeyDown} onChange={this.handleChange}></input>
+                    <input type="text" id={student.id} className="add-tag-input" placeholder="Add a Tag" onKeyDown={this.onKeyDown} onChange={this.handleChange}></input>
                   </form>
 
                 </div>
 
             </div>
     
-            <div className="accordion_button" id={index} onClick={this.whileFilteredDisplayMore}><div className="accordion_button_vert" id={index}></div></div>
+            <div className="expand-btn" id={index} onClick={this.whileFilteredDisplayMore}><div className="expand-btn_vert" id={index}></div></div>
 
         </div>
 
@@ -312,9 +312,9 @@ class Content extends React.Component {
         
           <div className="filters">
           
-            <input type="text" placeholder="Search by name" onChange={this.handleNameFilter}/>
+            <input type="text" id="name-input" placeholder="Search by name" onChange={this.handleNameFilter}/>
                   
-            <input type="text" placeholder="Search by tags" onChange={this.handleTagFilter}/>
+            <input type="text" id="tag-input" placeholder="Search by tags" onChange={this.handleTagFilter}/>
 
           </div>
 
@@ -351,14 +351,14 @@ class Content extends React.Component {
                 )}
         
                 <form>
-                  <input type="text" id={student.id} placeholder="Add a Tag" onChange={this.handleChange} onKeyDown={this.onKeyDown}></input>
+                  <input type="text" id={student.id} className="add-tag-input" placeholder="Add a Tag" onChange={this.handleChange} onKeyDown={this.onKeyDown}></input>
                 </form>
 
               </div>
 
             </div>
 
-            <div className="accordion_button" id={student.id} onClick={this.displayMore}><div className="accordion_button_vert" id={student.id}></div></div>
+            <div className="expand-btn" id={student.id} onClick={this.displayMore}><div className="expand-btn_vert" id={student.id}></div></div>
         
         </div> 
 
