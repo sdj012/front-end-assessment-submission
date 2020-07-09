@@ -15,7 +15,6 @@ class Content extends React.Component {
       filter_tag:"",
     }
 
-
     this.handleChange=this.handleChange.bind(this);
     this.onKeyDown=this.onKeyDown.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
