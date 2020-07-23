@@ -1,5 +1,6 @@
-
+Click the thumbnail to view a full demo:
 [![Watch the video](https://img.youtube.com/vi/NpItP9xMFjU/maxresdefault.jpg)](https://youtu.be/NpItP9xMFjU)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
