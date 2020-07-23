@@ -1,5 +1,5 @@
 
-<iframe width="600" height="300" src="https://www.youtube.com/embed/NpItP9xMFjU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/NpItP9xMFjU/maxresdefault.jpg)](https://youtu.be/NpItP9xMFjU)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
