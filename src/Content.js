@@ -102,7 +102,7 @@ class Content extends React.Component {
   }
 
   this.setState({
-    Student:newObj,
+    Students:newObj,
   })
 
   }

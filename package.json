@@ -18,10 +18,9 @@
     "react-select": "^3.0.4",
     "typescript": "^3.7.2"
   },
-
-  "engines":{
-    "npm":"6.4.1",
-    "node":"9.5.0"
+  "engines": {
+    "npm": "6.4.1",
+    "node": "9.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
